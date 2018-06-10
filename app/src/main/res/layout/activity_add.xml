@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.eosorio1.project.AddActivity">
+
+
+    <ScrollView
+        android:id="@+id/scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/descriptionLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <EditText
+                    android:id="@+id/nameOfEventEdit"
+                    android:layout_width="215dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="84dp"
+                    android:ems="10"
+                    android:hint="@string/eventname"
+                    android:inputType="textPersonName"
+                    android:textAlignment="center"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/descriptionEdit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="84dp"
+                    android:layout_marginTop="20dp"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:hint="@string/descriptionevent"
+                    android:inputType="textPersonName"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/nameOfEventEdit" />
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <android.support.v4.widget.NestedScrollView
+                    android:id="@+id/yearScroll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:fillViewport="true"
+                    app:layout_constraintLeft_toRightOf="@id/dayScroll">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <fragment
+                            android:id="@+id/yearFrag"
+                            android:name="com.example.eosorio1.project.YearFrag"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            tools:layout="@layout/fragment_year" />
+                    </LinearLayout>
+                </android.support.v4.widget.NestedScrollView>
+
+                <android.support.v4.widget.NestedScrollView
+                    android:id="@+id/dayScroll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:fillViewport="true"
+                    app:layout_constraintLeft_toRightOf="@id/monthScroll">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <fragment
+                            android:id="@+id/fragment3"
+                            android:name="com.example.eosorio1.project.DayFrag"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            tools:layout="@layout/fragment_day" />
+                    </LinearLayout>
+                </android.support.v4.widget.NestedScrollView>
+
+                <android.support.v4.widget.NestedScrollView
+                    android:id="@+id/monthScroll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:fillViewport="true"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <fragment
+                            android:id="@+id/monthFragment2"
+                            android:name="com.example.eosorio1.project.MonthFrag"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            tools:layout="@layout/month_fragment" />
+                    </LinearLayout>
+                </android.support.v4.widget.NestedScrollView>
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/timeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintRight_toRightOf="parent">
+
+                <TextView
+                    android:id="@+id/time2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="48dp"
+                    android:text="@string/starttime"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <NumberPicker
+                    android:id="@+id/hourPicker"
+                    android:layout_width="wrap_content"
+                    android:layout_height="128dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="80dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <NumberPicker
+                    android:id="@+id/minutePicker"
+                    android:layout_width="wrap_content"
+                    android:layout_height="128dp"
+                    android:layout_marginTop="80dp"
+                    app:layout_constraintStart_toEndOf="@+id/hourPicker"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <RadioGroup
+                    android:id="@+id/amOrPm"
+                    android:layout_width="69dp"
+                    android:layout_height="66dp"
+                    android:layout_marginTop="102dp"
+                    app:layout_constraintStart_toEndOf="@+id/minutePicker"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <RadioButton
+                        android:id="@+id/amRB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:checked="true"
+                        android:padding="5dp"
+                        android:text="@string/am"
+                        android:textSize="10sp" />
+
+                    <RadioButton
+                        android:id="@+id/pmRB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:checked="false"
+                        android:padding="5dp"
+                        android:text="@string/pm"
+                        android:textSize="10sp" />
+                </RadioGroup>
+
+                <NumberPicker
+                    android:id="@+id/endHour"
+                    android:layout_width="wrap_content"
+                    android:layout_height="128dp"
+                    android:layout_marginTop="13dp"
+                    app:layout_constraintEnd_toStartOf="@+id/endMin"
+                    app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+                <NumberPicker
+                    android:id="@+id/endMin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="128dp"
+                    android:layout_marginTop="13dp"
+                    app:layout_constraintEnd_toStartOf="@+id/endAmOrPm"
+                    app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+                <RadioGroup
+                    android:id="@+id/endAmOrPm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="4dp"
+                    android:layout_marginTop="102dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <RadioButton
+                        android:id="@+id/endAm"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/endam"
+                        android:textSize="10sp" />
+
+                    <RadioButton
+                        android:id="@+id/endPm"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:checked="true"
+                        android:text="@string/endpm"
+                        android:textSize="10sp" />
+                </RadioGroup>
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="88dp"
+                    android:layout_marginTop="48dp"
+                    android:text="@string/endtime"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/mapConstraint"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/goMapButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/mapButton"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/saveCL"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="30dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="116dp"
+                    android:text="@string/backbutton"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/saveButton"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <Button
+                    android:id="@+id/saveButton"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="30dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="148dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@android:drawable/alert_dark_frame"
+                    android:backgroundTint="@android:color/holo_red_light"
+                    android:gravity="center"
+                    android:text="@string/save"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.457"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/descriptionEdit"
+                    app:layout_constraintVertical_bias="0.0" />
+
+            </android.support.constraint.ConstraintLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</android.support.constraint.ConstraintLayout>

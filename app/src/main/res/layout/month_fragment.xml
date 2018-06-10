@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/monthFrag"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minHeight="108dp">
+
+    <RadioGroup
+        android:id="@+id/monthRG"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RadioButton
+            android:id="@+id/januaryRB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:checked="false"
+            android:duplicateParentState="false"
+            android:text="@string/january" />
+
+        <RadioButton
+            android:id="@+id/februaryRB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/february" />
+
+        <RadioButton
+            android:id="@+id/marchRB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/march" />
+
+        <RadioButton
+            android:id="@+id/aprilRB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/april" />
+
+        <RadioButton
+            android:id="@+id/mayRB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/may" />
+
+        <RadioButton
+            android:id="@+id/juneRB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/june" />
+
+        <RadioButton
+            android:id="@+id/julyRB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/july" />
+
+        <RadioButton
+            android:id="@+id/auguestRB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/august" />
+
+        <RadioButton
+            android:id="@+id/septemberRB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/september" />
+
+        <RadioButton
+            android:id="@+id/octoberRB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/october" />
+
+        <RadioButton
+            android:id="@+id/novemberRB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/november" />
+
+        <RadioButton
+            android:id="@+id/decemberRB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/december" />
+    </RadioGroup>
+
+</android.support.constraint.ConstraintLayout>

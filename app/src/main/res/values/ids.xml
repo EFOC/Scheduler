@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="buttonTableLayout"/>
+    <item type="id" name="monthScroll"/>
+    <item type="id" name="dayScroll"/>
+    <item type="id" name="monthRG"/>
+</resources>
